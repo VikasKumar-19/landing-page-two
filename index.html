@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="h-screen overflow-auto  bg-[url('/assets/images/bg01.jpg')] bg-center bg-cover">
+    <div class="overlay_container bg-black/75 h-full w-full flex items-center sm:justify-start justify-center transition-all duration-400">
+      <div class="w-full max-w-lg sm:max-w-xl px-5 sm:px-10 flex flex-col gap-6">
+        <h1 class="text-white text-5xl font-bold hidden sm:block">Eventually</h1>
+        <p class="text-[#b5b4b4] font-semibold hidden sm:block text-lg ">A simple template for telling the world when you'll launch your next big thing. Brought to you by HTML5 UP.</p>
+        <form class="flex-col sm:flex-row flex gap-5 items-center sm:h-10 ">
+          <input name="hidden" class="bg-black/40 py-2 font-semibold text-[#b5b4b4] outline-none rounded border border-[#b5b4b4] w-full sm:w-2/4 px-3 h-full" placeholder="Email Address" type="email">
+          <button class="bg-[#1cb495] w-full sm:w-auto py-2 text-white font-bold h-full px-3 sm:py-1 rounded" type="submit">Sign Up</button>
+          <div class="checkboxContainer invisible sm:hidden self-start text-[#4bffdb] flex gap-2 items-center">
+            <input class="cursor-pointer" id="checkBox" type="checkbox">
+            <label for="checkBox">Click to confirm</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="social_credits text-[#858282] absolute bottom-0 px-5 sm:px-10 py-8 flex flex-col gap-5">
+      <div class="links flex gap-4">
+        <img class="invert-[70%] h-5 cursor-pointer" src="./assets/images/facebook.png" alt="facebook">
+        <img class="invert-[70%] h-5 cursor-pointer" src="./assets/images/instagram.png" alt="instagram">
+        <img class="invert-[70%] h-5 cursor-pointer" src="./assets/images/github.png" alt="github">
+        <img class="invert-[70%] h-5 cursor-pointer" src="./assets/images/twitter.png" alt="twitter">
+      </div>
+      <div class="credits flex text-xs sm:text-sm">
+        <span class="pr-4 border-r-2 border-[#858282]">&copy; Untitled.</span>
+        <span class="pl-4">Credits: Unsplash + HTML5 UP</span>
+      </div>
+    </div>
+  </main>
+  <script>
+    const emailInput = document.querySelector('input[type="email"]');
+    const checkbox = document.querySelector('.checkboxContainer');
+    const overlayContainer = document.querySelector(".overlay_container");
+    emailInput.addEventListener("focus", ()=>{
+      checkbox.classList.remove("invisible")
+      overlayContainer.classList.remove("bg-black/75");
+      overlayContainer.classList.add("bg-black/50");
+    })
+  </script>
+</body>
+</html>
